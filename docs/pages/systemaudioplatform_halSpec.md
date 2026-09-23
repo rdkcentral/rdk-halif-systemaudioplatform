@@ -240,6 +240,4 @@ NOTE: The module would operate deterministically if the above call sequence is f
 ## References
 
 - `GStreamer` - Open source multimedia framework used to build the audio pipeline, (https://gstreamer.freedesktop.org/documentation/application-development/)
-- GStreamer `cutter` element (silence detection) reference: https://gstreamer.freedesktop.org/documentation/cutter/
-- `RDK SystemAudioPlayer` - RDK service that consumes this interface, (https://rdkcentral.github.io/rdkservices/#/api/SystemAudioPlayerPlugin)
 - `SystemAudioPlatform` HAL - SystemAudioPlatform vendor specification (https://github.com/rdkcentral/rdkvhal-systemaudioplatform-raspberrypi4)

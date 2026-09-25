@@ -143,7 +143,7 @@ The `HAL` implementation is expected to be released under the Apache License 2.0
 
 ### Build Requirements
 
-The source code must build into a shared library named `libsystemaudioplatform.so`. The build mechanism must be independent of Yocto. The build depends on `GStreamer` (`gstreamer-1.0`, `gstreamer-app-1.0`) and the `SoC` audio client library.
+The source code must build into a shared library named `libsystemaudioplatform.so`. The build mechanism must be independent of Yocto. The build depends on `GStreamer` (`gstreamer-1.0`, `gstreamer-app-1.0`, `gstreamer-audio-1.0`) and the `SoC` audio client library.
 
 ### Variability Management
 
@@ -196,7 +196,7 @@ The `caller` is expected to have complete control over the life cycle of the `HA
    - `systemAudioSetDetectTime()` - how quickly the detector reacts when sound appears.
    - `systemAudioSetHoldTime()` - how long the detector holds its state before declaring silence again.
 
-5. De-initialize the `SAP` `HAL` using the function: `systemAudioDeinitialize()`.
+5. Stop and release the caller-owned GStreamer pipeline (including its sink and source), then de-initialize the `SAP` `HAL` using the function: `systemAudioDeinitialize()`.
 
 NOTE: The module would operate deterministically if the above call sequence is followed.
 
